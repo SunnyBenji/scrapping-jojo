@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import  pandas as pd
-import time
 
 # Do the same with https://stacker.com/stories/1587/100-best-movies-all-time
 
@@ -98,10 +97,7 @@ class JojoScraper(object):
         return self.characters
 
 if __name__ == "__main__":
-    start = time.perf_counter()
     characters = JojoScraper().get_characters()
-    end = time.perf_counter()
-    print(end - start)
     dataFrame = pd.DataFrame(characters).fillna('No data')
     dataFrame.to_excel("jojo's charactere data.xlsx", sheet_name="jojo_charaters",encoding='utf-8', index=False)
     print(dataFrame)
