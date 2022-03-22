@@ -38,6 +38,9 @@ Enfin grâce à pandas, un dataFrame sera créé et exporté au format csv
 
 ## Usage
 Vous pouvez limiter le nombre de personnages à récupérer en remplissant une lilite en paramètre de la fonction 
+```python
+get_characters_link(limite)
+```
 
 ## Contribution
 Les Pull requests sont les bienvenues et seront accepté si intéressant pour le projet.
