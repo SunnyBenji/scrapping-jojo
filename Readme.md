@@ -7,7 +7,7 @@ Ce script permet de récupérer les données des personage de Jojo's bizarre adv
 - https://jjba.fandom.com/
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install 
+Utiliser le gestionnaire  de package [pip](https://pip.pypa.io/en/stable/) poru installer les dépendances
 
 - bs4.
 
