@@ -38,10 +38,12 @@ class JojoScraper(object):
         self.characters_link = self.characters_link_first_part + self.characters_link_second_part
 
     def get_charactereLink_first_part(self, lim1):
-        categories = self.get_soup(self.pages[1]).find(class_='category-page__members').find_all(class_='category-page__members-wrapper')
+        categories_div = self.get_soup(self.pages[1]).find(class_='category-page__members')
+        categories = categories_div.find_all(class_='category-page__members-wrapper')
         if (type(lim1) != int):
             for category in categories:
-                characters = category.find(class_='category-page__members-for-char').find_all(class_='category-page__member')
+                characters_div = category.find(class_='category-page__members-for-char')
+                characters = characters_div.find_all(class_='category-page__member')
                 for character in characters:
                     link = character.a.get('href')
                     if link.find(':') == -1:
@@ -49,7 +51,8 @@ class JojoScraper(object):
         elif (len(self.characters_link_first_part) < lim1 ) :
             for category in categories:
                 if(len(self.characters_link_first_part) < lim1) :
-                    characters = category.find(class_='category-page__members-for-char').find_all(class_='category-page__member')
+                    characters_div = category.find(class_='category-page__members-for-char')
+                    characters = characters_div.find_all(class_='category-page__member')
                     for character in characters:
                         if(len(self.characters_link_first_part) < lim1):
                             link = character.a.get('href')
@@ -61,10 +64,12 @@ class JojoScraper(object):
                     break
 
     def get_charactereLink_second_part(self, lim2):
-        categories = self.get_soup(self.pages[1]+'?from=Squalo').find(class_='category-page__members').find_all(class_='category-page__members-wrapper')
+        categories_div = self.get_soup(self.pages[1]+'?from=Squalo').find(class_='category-page__members')
+        categories = categories_div.find_all(class_='category-page__members-wrapper')
         if (type(lim2) != int ):
             for category in categories:
-                characters = category.find(class_='category-page__members-for-char').find_all(class_='category-page__member')
+                characters_div = category.find(class_='category-page__members-for-char')
+                characters = characters_div.find_all(class_='category-page__member')
                 for character in characters:
                     link = character.a.get('href')
                     if link.find(':') == -1:
@@ -72,7 +77,8 @@ class JojoScraper(object):
         elif (len(self.characters_link_second_part) < lim2 ) :
             for category in categories:
                 if(len(self.characters_link_second_part) < lim2) :
-                    characters = category.find(class_='category-page__members-for-char').find_all(class_='category-page__member')
+                    characters_div = category.find(class_='category-page__members-for-char')
+                    characters = characters_div.find_all(class_='category-page__member')
                     for character in characters:
                         if(len(self.characters_link_second_part) < lim2) :
                             link = character.a.get('href')
