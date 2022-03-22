@@ -1,0 +1,9 @@
+Veuillez installer les packages suivant : 
+- bs4 et BeautifulSoup
+- pandas
+
+
+Ce script permet de récupérer les données de tous les personnages de Jojo's bizarre adventure à partir du site : 
+https://jjba.fandom.com/
+
+Ce read me est un prototype il sera mis à jour
